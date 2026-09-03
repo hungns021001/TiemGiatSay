@@ -1,18 +1,19 @@
 import { Clock3, MapPin, Phone, Shirt } from 'lucide-react';
+import Link from 'next/link';
 
 export default function Footer() {
   return (
     <footer className="footer">
       <div className="container footer-grid">
         <div>
-          <div className="brand-block footer-brand">
+          <Link className="brand-block footer-brand" href="/#top">
             <div className="brand-mark">
               <Shirt size={22} />
             </div>
             <div>
               <p className="brand-name">Giặt Sấy Cảnh Hương</p>
             </div>
-          </div>
+          </Link>
           <p className="footer-copy">Dịch vụ giặt ủi chuyên nghiệp, hiện đại và thân thiện với người dùng.</p>
         </div>
 

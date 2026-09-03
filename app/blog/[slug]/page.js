@@ -16,7 +16,10 @@ export default function BlogDetailPage({ params }) {
   return (
     <main className="container section-space blog-hero">
       <article className="article-shell">
-        <Link href="/blog" className="secondary-button">← Quay lại blog</Link>
+        <div className="article-actions">
+          <Link href="/blog" className="secondary-button">← Quay lại blog</Link>
+          <Link href="/#top" className="secondary-button">Về trang chủ</Link>
+        </div>
         <span className="section-kicker" style={{ marginTop: '1rem', display: 'inline-flex' }}>{post.readTime}</span>
         <h1 style={{ margin: '1rem 0', fontSize: 'clamp(2rem, 4vw, 3.2rem)', letterSpacing: '-0.06em' }}>{post.title}</h1>
         <Image src={post.image} alt={post.title} width={1200} height={800} />

@@ -77,9 +77,6 @@ export default function HeroSection() {
           animate={{ opacity: 1, scale: 1, rotateX: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
-          <div className="visual-orbit orbit-one" />
-          <div className="visual-orbit orbit-two" />
-
           <div className="spotlight-card glass-card">
             <div className="card-top">
               <div>

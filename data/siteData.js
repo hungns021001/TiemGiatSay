@@ -3,9 +3,10 @@ import { Clock3, Droplets, Leaf, ShieldCheck, Sparkles, Star, Truck } from 'luci
 export const navItems = [
   { label: 'Trang chủ', href: '#top' },
   { label: 'Dịch vụ', href: '#services' },
-  { label: 'Bảng giá', href: '#pricing' },
   { label: 'Quy trình', href: '#process' },
+  { label: 'Bảng giá', href: '#pricing' },
   { label: 'Đánh giá', href: '#reviews' },
+  { label: 'Blog', href: '/blog' },
   { label: 'Liên hệ', href: '#contact' },
 ];
 

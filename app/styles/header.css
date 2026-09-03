@@ -1,0 +1,11 @@
+.brand-name { color: var(--text); }
+.brand-tag { color: var(--muted); }
+.nav-menu { color: var(--muted); }
+.nav-menu a:hover { color: var(--primary); }
+.brand-mark { box-shadow: 0 12px 24px rgba(18, 111, 105, 0.22); }
+
+.nav-menu { gap: 22px; }
+
+@media (max-width: 980px) {
+  .nav-menu { background: rgba(248, 250, 247, 0.97); }
+}

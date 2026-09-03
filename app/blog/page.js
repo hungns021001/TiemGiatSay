@@ -9,6 +9,9 @@ export default function BlogPage() {
       <div className="content-center narrow">
         <span className="section-kicker">Blog & mẹo</span>
         <h2>Những chia sẻ giúp đồ của bạn luôn sạch đẹp và bền lâu hơn</h2>
+        <Link className="secondary-button blog-back-link" href="/#top">
+          Quay lại trang chủ
+        </Link>
       </div>
 
       <div className="blog-grid">

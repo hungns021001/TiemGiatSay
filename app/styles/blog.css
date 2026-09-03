@@ -1,0 +1,8 @@
+.blog-back-link { margin-top: 1.5rem; }
+.article-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.blog-back-link,
+.article-actions .secondary-button { color: var(--text); }
+.blog-card-content h3 { color: var(--text); }
+.blog-card-content p,
+.article-shell p,
+.article-shell li { color: var(--muted); }

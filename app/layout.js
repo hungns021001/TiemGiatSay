@@ -1,4 +1,8 @@
 import './globals.css';
+import './styles/theme.css';
+import './styles/header.css';
+import './styles/hero.css';
+import './styles/blog.css';
 import Script from 'next/script';
 
 import { GoogleAnalytics } from '../components/GoogleAnalytics';
