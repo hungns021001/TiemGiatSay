@@ -6,9 +6,6 @@ export default function MapSection() {
           <span className="section-kicker">Địa chỉ</span>
           <h2>Ghé thăm hoặc gọi để đặt lịch</h2>
         </div>
-        <a className="secondary-button" href="tel:0909123456">
-          Gọi ngay 0909 123 456
-        </a>
       </div>
 
       <div className="container map-shell glass-card">

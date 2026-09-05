@@ -1,8 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { Menu, WashingMachine, X } from 'lucide-react';
 
 import { navItems } from '../data/siteData';
@@ -11,7 +11,20 @@ const headerOrder = ['Trang chủ', 'Dịch vụ', 'Quy trình', 'Bảng giá', 
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const headerRef = useRef(null);
   const router = useRouter();
+  const pathname = usePathname();
+
+  useEffect(() => {
+    const handleOutsidePointer = (event) => {
+      if (mobileMenuOpen && headerRef.current && !headerRef.current.contains(event.target)) {
+        setMobileMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('pointerdown', handleOutsidePointer);
+    return () => document.removeEventListener('pointerdown', handleOutsidePointer);
+  }, [mobileMenuOpen]);
   const goHome = (event) => {
     event.preventDefault();
     setMobileMenuOpen(false);
@@ -26,7 +39,7 @@ export default function Header() {
   };
 
   return (
-    <header className="topbar" id="top">
+    <header ref={headerRef} className="topbar" id="top">
       <div className="container nav-wrap">
         <Link className="brand-block" href="/" onClick={goHome}>
           <div className="brand-mark">
@@ -34,16 +47,19 @@ export default function Header() {
           </div>
           <div>
             <p className="brand-name">Giặt Sấy Cảnh Hương</p>
-            <span className="brand-tag">Laundry Studio</span>
+            <span className="brand-tag">Canh Huong Laundry</span>
           </div>
         </Link>
 
         <nav className={`nav-menu ${mobileMenuOpen ? 'open' : ''}`}>
-          {headerOrder.map((label) => navItems.find((item) => item.label === label)).filter(Boolean).map((item) => (
-            <a href={item.label === 'Trang chủ' ? '/' : item.href} key={item.label} onClick={item.label === 'Trang chủ' ? goHome : () => setMobileMenuOpen(false)}>
+          {headerOrder.map((label) => navItems.find((item) => item.label === label)).filter(Boolean).map((item) => {
+            const sectionHref = item.href.startsWith('#') && pathname !== '/' ? `/${item.href}` : item.href;
+            return (
+            <a href={item.label === 'Trang chủ' ? '/' : sectionHref} key={item.label} onClick={item.label === 'Trang chủ' ? goHome : () => setMobileMenuOpen(false)}>
               {item.label}
             </a>
-          ))}
+            );
+          })}
         </nav>
 
         <div className="nav-actions">

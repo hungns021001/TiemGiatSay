@@ -19,10 +19,6 @@
     "react-dom": "^18.2.0",
     "three": "^0.169.0"
   },
-  "devDependencies": {
-    "@vitejs/plugin-react": "^4.3.4",
-    "vite": "^5.4.10"
-  },
   "allowScripts": {
     "esbuild@0.21.5": true
   }

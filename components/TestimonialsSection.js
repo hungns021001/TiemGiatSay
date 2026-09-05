@@ -2,15 +2,13 @@ import { Star } from 'lucide-react';
 import Image from 'next/image';
 
 import { reviews } from '../data/siteData';
+import SectionIntro from './SectionIntro';
 
 export default function TestimonialsSection() {
   return (
     <section id="reviews" className="section-space testimonial-section">
       <div className="container">
-        <div className="content-center narrow">
-          <span className="section-kicker">Khách hàng nói gì</span>
-          <h2>Niềm tin được xây dựng từ mỗi trải nghiệm giặt và phục vụ</h2>
-        </div>
+        <SectionIntro kicker="Khách hàng nói gì" title="Niềm tin được xây dựng từ mỗi trải nghiệm giặt và phục vụ" />
 
         <div className="review-grid">
           {reviews.map((review) => (
@@ -23,7 +21,7 @@ export default function TestimonialsSection() {
               <p>“{review.text}”</p>
               <div className="review-person">
                 <div className="avatar">
-                  <Image src={review.image} alt={review.name} width={40} height={40} unoptimized />
+                  <Image src={review.image} alt={review.name} width={40} height={40} />
                 </div>
                 <strong>{review.name}</strong>
               </div>

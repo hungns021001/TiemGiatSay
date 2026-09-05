@@ -1,15 +1,13 @@
 import { Check } from 'lucide-react';
 
 import { pricingTable } from '../data/siteData';
+import SectionIntro from './SectionIntro';
 
 export default function PricingSection() {
   return (
     <section id="pricing" className="section-space pricing-section">
       <div className="container">
-        <div className="content-center narrow">
-          <span className="section-kicker">Bảng giá</span>
-          <h2>Giá dịch vụ minh bạch theo từng loại đồ</h2>
-        </div>
+        <SectionIntro kicker="Bảng giá" title="Giá dịch vụ minh bạch theo từng loại đồ" />
 
         <div className="pricing-grid">
           {pricingTable.map((item) => (
@@ -31,6 +29,9 @@ export default function PricingSection() {
             </div>
           ))}
         </div>
+        <p className="pricing-note">
+          Giá có thể thay đổi tùy chất liệu, kích thước và tình trạng đồ. Vui lòng gửi ảnh để được báo giá chính xác.
+        </p>
       </div>
     </section>
   );

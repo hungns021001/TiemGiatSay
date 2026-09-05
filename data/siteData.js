@@ -1,4 +1,4 @@
-import { Clock3, Droplets, Leaf, ShieldCheck, Sparkles, Star, Truck } from 'lucide-react';
+import { ClipboardCheck, Clock3, Droplets, Leaf, ShieldCheck, Sparkles, Star, Truck, WashingMachine, Wind } from 'lucide-react';
 
 export const navItems = [
   { label: 'Trang chủ', href: '#top' },
@@ -11,8 +11,8 @@ export const navItems = [
 ];
 
 export const stats = [
-  { value: '12+', label: 'Năm kinh nghiệm' },
-  { value: '8.500+', label: 'Đơn hàng thành công' },
+  { value: '5+', label: 'Năm kinh nghiệm' },
+  { value: '999+', label: 'Đơn hàng thành công' },
   { value: '4.9/5', label: 'Đánh giá khách hàng' },
   { value: '24/7', label: 'Hỗ trợ đặt lịch' },
 ];
@@ -39,65 +39,69 @@ export const services = [
   {
     title: 'Giặt sấy quần áo',
     subtitle: 'Từ áo sơ mi, đồ gia đình đến bộ đồ văn phòng',
-    price: 'Từ 35.000đ/kg',
+    price: 'Từ 30.000đ/kg',
     accent: 'blue',
-    image: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=900&q=80',
+    image: '/images/anhquanao.jpg',
   },
   {
     title: 'Giặt giày & túi xách',
     subtitle: 'Làm sạch sâu, khử mùi, phục hồi màu sắc',
-    price: 'Từ 120.000đ/đôi',
+    price: 'Từ 60.000đ/đôi',
     accent: 'purple',
     image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=80',
   },
   {
     title: 'Giặt rèm – sofa – thảm',
     subtitle: 'Vệ sinh nội thất chuyên sâu cho không gian sống',
-    price: 'Từ 199.000đ',
+    price: 'Tham khảo báo giá',
     accent: 'cyan',
-    image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80',
+    image: '/images/rem.png',
   },
   {
     title: 'Giặt áo khoác & đồ mùa đông',
     subtitle: 'Giặt sạch lớp bụi, mùi hôi, giữ phom dáng nguyên vẹn',
-    price: 'Từ 150.000đ/chiếc',
+    price: 'Tham khảo báo giá',
     accent: 'blue',
     image: 'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80',
   },
   {
     title: 'Giặt chăn ga gối',
     subtitle: 'Vệ sinh chăn ga gối định kỳ, thơm thoáng và an toàn cho da',
-    price: 'Từ 180.000đ/set',
+    price: 'Tham khảo báo giá',
     accent: 'purple',
-    image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80',
+    image: '/images/changgagoi.jpg',
   },
   {
-    title: 'Giặt đồ đồng phục & công sở',
+    title: 'Giặt số lượng lớn cho doanh nghiệp',
     subtitle: 'Dịch vụ cho văn phòng, resort, lễ tân, nhân sự',
-    price: 'Từ 49.000đ/set',
+    price: 'Tham khảo báo giá',
     accent: 'cyan',
-    image: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80',
+    image: 'https://images.unsplash.com/photo-1582735689369-4fe89db7114c?auto=format&fit=crop&w=900&q=85',
   },
 ];
 
 export const process = [
   {
     step: '01',
+    icon: ClipboardCheck,
     title: 'Tiếp nhận & phân loại',
     text: 'Kiểm tra chất liệu, màu sắc và mức độ bẩn để tư vấn phương án giặt phù hợp nhất.',
   },
   {
     step: '02',
+    icon: WashingMachine,
     title: 'Giặt sạch sâu',
     text: 'Sử dụng máy giặt công nghiệp cùng hóa chất chuyên dụng để loại bỏ bụi và mùi hiệu quả.',
   },
   {
     step: '03',
+    icon: Wind,
     title: 'Sấy & ủi',
     text: 'Sấy khô đều, ủi phẳng và kiểm tra chất lượng trước khi đóng gói.',
   },
   {
     step: '04',
+    icon: Truck,
     title: 'Giao tận nơi',
     text: 'Giao hàng đúng khung giờ, kiểm tra lại sản phẩm và hỗ trợ sau khi nhận đồ.',
   },
@@ -106,21 +110,21 @@ export const process = [
 export const pricingTable = [
   {
     name: 'Giặt thường',
-    price: '35.000đ/kg',
+    price: '30.000đ/kg',
     description: 'Phù hợp đồ quần áo cá nhân, mền, gối, phụ kiện thường ngày.',
     features: ['Giặt sạch sâu', 'Sấy khô cơ bản', 'Tối ưu chi phí'],
     highlight: false,
   },
   {
     name: 'Giặt hấp',
-    price: '55.000đ/kg',
+    price: '50.000đ/kg',
     description: 'Phù hợp đồ dễ nhăn, quần áo công sở hoặc cần khử khuẩn nâng cao.',
     features: ['Ẩm tốt', 'Khử khuẩn', 'Phục hồi form dáng'],
     highlight: true,
   },
   {
     name: 'Giặt thảm & sofa',
-    price: '199.000đ+',
+    price: 'Tham khảo báo giá',
     description: 'Vệ sinh nội thất, khử mùi và bụi bẩn trong không gian sống.',
     features: ['Khử mùi', 'Vệ sinh sâu', 'Tư vấn quote theo diện tích'],
     highlight: false,
@@ -129,22 +133,22 @@ export const pricingTable = [
 
 export const reviews = [
   {
-    name: 'Ms. Lan',
+    name: 'Anh Trọng',
     text: 'Dịch vụ rất chuyên nghiệp, đồ sạch như mới, đúng hẹn và gói hàng cực đẹp. Tôi sẽ đặt lại.',
     rating: 5,
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=500&q=80',
+    image: '/images/anhtrong.jpg',
   },
   {
     name: 'Anh Tuấn',
     text: 'Tôi đặt giặt giày và rèm cửa, kết quả vượt mong đợi. Dịch vụ đã được tối ưu rất đáng tiền.',
     rating: 5,
-    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=500&q=80',
+    image: '/images/anhtuan.jpg',
   },
   {
-    name: 'Chị Hà',
+    name: 'Chị Hương',
     text: 'Mình rất thích cách nhân viên tư vấn rõ ràng và giao nhận đúng giờ. Cảm giác rất tin cậy.',
     rating: 5,
-    image: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=500&q=80',
+    image: '/images/chihuong.jpg',
   },
 ];
 
@@ -158,23 +162,26 @@ export const serviceHighlights = [
 export const blogPosts = [
   {
     slug: 'meo-bao-quan-vai-xanh',
-    title: 'Mẹo bảo quản đồ vải xanh và giữ màu lâu',
+    title: '10 Mẹo bảo quản đồ vải xanh và giữ màu lâu',
     excerpt: 'Cách giặt, phơi và bảo quản để quần áo luôn đẹp và bền hơn.',
+    keywords: ['bảo quản đồ vải xanh', 'giữ màu quần áo xanh lâu', 'cách giặt quần áo màu xanh'],
     image: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=1200&q=80',
-    readTime: '3 phút đọc',
+    readTime: '13 phút đọc',
   },
   {
     slug: 'cach-khu-mui-nao-bo-cho-giay',
-    title: 'Cách khử mùi cho giày và túi xách hiệu quả',
+    title: '10 Cách khử mùi cho giày và túi xách hiệu quả',
     excerpt: 'Những lỗi thường gặp khi giặt giày và bí quyết làm sạch đúng cách.',
+    keywords: ['khử mùi giày', 'khử mùi túi xách', 'vệ sinh giày túi chuyên nghiệp'],
     image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=80',
-    readTime: '4 phút đọc',
+    readTime: '14 phút đọc',
   },
   {
     slug: 'lam-sao-giu-rem-sofa-sach-dep',
-    title: 'Làm sao giữ rèm sofa sạch đẹp theo mùa',
-    excerpt: 'Lịch vệ sinh, quy trình chăm sóc và phần mềm giặt phù hợp cho nội thất.',
+    title: '10 Cách giữ rèm sofa sạch đẹp theo mùa',
+    excerpt: 'Lịch vệ sinh, quy trình chăm sóc và phương pháp giặt phù hợp cho nội thất.',
+    keywords: ['vệ sinh rèm sofa', 'giữ rèm sofa sạch đẹp', 'giặt rèm sofa theo mùa'],
     image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80',
-    readTime: '5 phút đọc',
+    readTime: '15 phút đọc',
   },
 ];

@@ -6,3 +6,30 @@
 .blog-card-content p,
 .article-shell p,
 .article-shell li { color: var(--muted); }
+
+.article-content {
+  max-width: 780px;
+}
+
+.article-content h2 {
+  margin: 2rem 0 0.75rem;
+  color: var(--text);
+  font-size: clamp(1.35rem, 2.5vw, 1.8rem);
+  line-height: 1.2;
+}
+
+.article-content p {
+  margin: 0 0 1rem;
+  line-height: 1.8;
+}
+
+.article-content ul {
+  display: grid;
+  gap: 0.45rem;
+  padding-left: 1.25rem;
+  margin: 0 0 1rem;
+}
+
+.article-content strong {
+  color: var(--text);
+}

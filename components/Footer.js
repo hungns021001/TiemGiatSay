@@ -19,9 +19,9 @@ export default function Footer() {
 
         <div className="footer-list">
           <h4>Liên hệ</h4>
-          <span><Phone size={16} /> 0909 123 456</span>
-          <span><MapPin size={16} /> Hà Tĩnh, Việt Nam</span>
-          <span><Clock3 size={16} /> 7:30 - 21:00</span>
+          <span><Phone size={16} /> 0367 123 568</span>
+          <span><MapPin size={16} />Đối diện Đài Tưởng niệm Xã Hương Phố, Tỉnh Hà Tĩnh, Việt Nam</span>
+          <span><Clock3 size={16} /> 7:00 - 21:00</span>
         </div>
 
         <div className="footer-list">

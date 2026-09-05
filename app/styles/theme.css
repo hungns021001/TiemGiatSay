@@ -22,9 +22,11 @@ body {
 }
 
 .hero-bg {
+  position: absolute;
+  inset: 0;
   background:
     linear-gradient(90deg, rgba(223, 231, 227, 0.96) 0%, rgba(223, 231, 227, 0.88) 42%, rgba(223, 231, 227, 0.58) 100%),
-    url('https://images.unsplash.com/photo-1582735689369-4fe89db7114c?auto=format&fit=crop&w=1800&q=85') center/cover no-repeat;
+    url('https://images.unsplash.com/photo-1582735689369-4fe89db7114c?auto=format&fit=crop&w=1800&q=85') bottom/cover no-repeat;
   opacity: 0.92;
 }
 

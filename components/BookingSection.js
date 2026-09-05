@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const initialState = {
   name: '',
@@ -13,10 +13,52 @@ const initialState = {
   notes: '',
 };
 
+const SUBMIT_COOLDOWN_SECONDS = 30;
+const SUBMIT_COOLDOWN_KEY = 'booking-submit-cooldown';
+
 export default function BookingSection() {
   const [formData, setFormData] = useState(initialState);
   const [status, setStatus] = useState({ type: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [cooldownSeconds, setCooldownSeconds] = useState(0);
+  const statusTimeoutRef = useRef(null);
+
+  const showStatus = (nextStatus) => {
+    if (statusTimeoutRef.current) {
+      window.clearTimeout(statusTimeoutRef.current);
+    }
+
+    setStatus(nextStatus);
+    statusTimeoutRef.current = window.setTimeout(() => {
+      setStatus({ type: '', message: '' });
+      statusTimeoutRef.current = null;
+    }, 6000);
+  };
+
+  useEffect(() => () => {
+    if (statusTimeoutRef.current) {
+      window.clearTimeout(statusTimeoutRef.current);
+    }
+  }, []);
+
+  useEffect(() => {
+    const lastSubmitAt = Number(window.localStorage.getItem(SUBMIT_COOLDOWN_KEY));
+    const remaining = Math.ceil((lastSubmitAt + SUBMIT_COOLDOWN_SECONDS * 1000 - Date.now()) / 1000);
+
+    if (remaining > 0) {
+      setCooldownSeconds(remaining);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (cooldownSeconds <= 0) return undefined;
+
+    const timer = window.setInterval(() => {
+      setCooldownSeconds((seconds) => Math.max(0, seconds - 1));
+    }, 1000);
+
+    return () => window.clearInterval(timer);
+  }, [cooldownSeconds]);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -28,8 +70,13 @@ export default function BookingSection() {
 
     if (event.target.website?.value) return;
 
+    if (cooldownSeconds > 0) {
+      showStatus({ type: 'error', message: `Vui lòng chờ ${cooldownSeconds} giây trước khi gửi lại.` });
+      return;
+    }
+
     if (!formData.name || !formData.phone || !formData.pickupDate || !formData.address) {
-      setStatus({ type: 'error', message: 'Vui lòng điền đầy đủ thông tin bắt buộc.' });
+      showStatus({ type: 'error', message: 'Vui lòng điền đầy đủ thông tin bắt buộc.' });
       return;
     }
 
@@ -63,10 +110,12 @@ export default function BookingSection() {
         throw new Error('Gửi form thất bại');
       }
 
-      setStatus({ type: 'success', message: 'Đặt lịch thành công. Chúng tôi sẽ liên hệ lại trong thời gian sớm nhất.' });
+      showStatus({ type: 'success', message: 'Đặt lịch thành công. Chúng tôi sẽ liên hệ lại trong thời gian sớm nhất.' });
+      window.localStorage.setItem(SUBMIT_COOLDOWN_KEY, String(Date.now()));
+      setCooldownSeconds(SUBMIT_COOLDOWN_SECONDS);
       setFormData(initialState);
     } catch (error) {
-      setStatus({ type: 'error', message: 'Hệ thống chưa gửi được email. Vui lòng gọi trực tiếp qua số 0909 123 456.' });
+      showStatus({ type: 'error', message: 'Hệ thống chưa gửi được email. Vui lòng gọi trực tiếp qua số 0367123568.' });
     } finally {
       setIsSubmitting(false);
     }
@@ -84,11 +133,11 @@ export default function BookingSection() {
 
           <div className="booking-points">
             <div>
-              <strong>09:00 - 21:00</strong>
+              <strong>07:00 - 21:00</strong>
               <span>Giờ làm việc</span>
             </div>
             <div>
-              <strong>2h15</strong>
+              <strong>4h15</strong>
               <span>Thời gian xử lý trung bình</span>
             </div>
           </div>
@@ -160,8 +209,12 @@ export default function BookingSection() {
             </div>
           ) : null}
 
-          <button type="submit" className="primary-button submit-button" disabled={isSubmitting}>
-            {isSubmitting ? 'Đang gửi...' : 'Gửi đặt lịch'}
+          <button type="submit" className="primary-button submit-button" disabled={isSubmitting || cooldownSeconds > 0}>
+            {isSubmitting
+              ? 'Đang gửi...'
+              : cooldownSeconds > 0
+                ? `Gửi lại sau ${cooldownSeconds}s`
+                : 'Gửi đặt lịch'}
           </button>
         </form>
       </div>

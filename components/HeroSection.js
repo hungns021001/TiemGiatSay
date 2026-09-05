@@ -7,20 +7,8 @@ import { ArrowRight, Check, ChevronRight, Droplets, ShieldCheck, Sparkles } from
 import { serviceHighlights, stats } from '../data/siteData';
 import ThreeLaundryScene from './ThreeLaundryScene';
 
-function getDailyOrderCount() {
-  const now = new Date();
-  const daySeed = `${now.getFullYear()}-${now.getMonth()}-${now.getDate()}`;
-  const seedValue = Array.from(daySeed).reduce((total, char) => total + char.charCodeAt(0), 0);
-  const hourFactor = now.getHours() / 24;
-  const randomBase = ((seedValue * 17 + now.getMinutes() * 7 + now.getSeconds()) % 100) / 100;
-  const phase = Math.sin((now.getHours() + now.getMinutes() / 60) / 12 * Math.PI);
-
-  return Math.max(18, Math.min(126, Math.round(42 + randomBase * 28 + phase * 18 + hourFactor * 10)));
-}
-
 export default function HeroSection() {
   const [isMobile, setIsMobile] = useState(false);
-  const currentOrderCount = getDailyOrderCount();
 
   useEffect(() => {
     const media = window.matchMedia('(max-width: 768px)');
@@ -80,10 +68,10 @@ export default function HeroSection() {
           <div className="spotlight-card glass-card">
             <div className="card-top">
               <div>
-                <p>Đơn hàng hôm nay</p>
-                <strong>{currentOrderCount} bộ đồ</strong>
+                <p>Quy trình tại Cảnh Hương</p>
+                <strong>Phân loại kỹ từng mẻ</strong>
               </div>
-              <span className="live-pill">Live</span>
+              <span className="live-pill">Tận tâm</span>
             </div>
 
             <div className="washing-visual">
@@ -102,8 +90,8 @@ export default function HeroSection() {
 
             <div className="card-bottom">
               <div>
-                <span>Thời gian dự kiến</span>
-                <strong>2 giờ 15 phút</strong>
+                <span>Thời gian xử lý</span>
+                <strong>Theo từng loại đồ</strong>
               </div>
               <a className="icon-button" href="#booking" aria-label="Xem chi tiết">
                 <ChevronRight size={18} />

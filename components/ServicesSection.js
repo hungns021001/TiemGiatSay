@@ -1,6 +1,4 @@
-'use client';
-
-import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { ChevronRight } from 'lucide-react';
 
 import { services } from '../data/siteData';
@@ -18,13 +16,18 @@ export default function ServicesSection() {
 
       <div className="container service-grid">
         {services.map((service) => (
-          <motion.article
+          <article
             key={service.title}
             className={`service-card accent-${service.accent}`}
-            whileHover={{ y: -10, rotateY: 3 }}
-            transition={{ type: 'spring', stiffness: 220, damping: 18 }}
           >
-            <div className="service-image" style={{ backgroundImage: `url(${service.image})` }} />
+            <div className="service-image">
+              <Image
+                src={service.image}
+                alt={service.title}
+                fill
+                sizes="(max-width: 680px) 100vw, (max-width: 980px) 50vw, 33vw"
+              />
+            </div>
             <div className="service-content">
               <span className="service-badge">{service.price}</span>
               <h3>{service.title}</h3>
@@ -33,7 +36,7 @@ export default function ServicesSection() {
                 Tìm hiểu thêm <ChevronRight size={16} />
               </a>
             </div>
-          </motion.article>
+          </article>
         ))}
       </div>
     </section>
