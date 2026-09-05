@@ -68,7 +68,7 @@ export default function HeroSection() {
           <div className="spotlight-card glass-card">
             <div className="card-top">
               <div>
-                <p>Quy trình tại Cảnh Hương</p>
+                <p>Quy trình tại giặt sấy Cảnh Hương</p>
                 <strong>Phân loại kỹ từng mẻ</strong>
               </div>
               <span className="live-pill">Tận tâm</span>
