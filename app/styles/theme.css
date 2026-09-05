@@ -23,9 +23,9 @@ body {
 
 .hero-bg {
   background:
-    radial-gradient(circle at 78% 28%, rgba(255, 255, 255, 0.65) 0 4px, transparent 5px),
-    radial-gradient(circle at 86% 18%, rgba(255, 255, 255, 0.5) 0 8px, transparent 9px),
-    linear-gradient(135deg, #c4d8cf 0%, #dfe7e3 55%, #e5d8c9 100%);
+    linear-gradient(90deg, rgba(223, 231, 227, 0.96) 0%, rgba(223, 231, 227, 0.88) 42%, rgba(223, 231, 227, 0.58) 100%),
+    url('https://images.unsplash.com/photo-1582735689369-4fe89db7114c?auto=format&fit=crop&w=1800&q=85') center/cover no-repeat;
+  opacity: 0.92;
 }
 
 .topbar {
