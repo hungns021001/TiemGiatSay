@@ -165,7 +165,7 @@ export const blogPosts = [
     title: '10 Mẹo bảo quản đồ vải xanh và giữ màu lâu',
     excerpt: 'Cách giặt, phơi và bảo quản để quần áo luôn đẹp và bền hơn.',
     keywords: ['bảo quản đồ vải xanh', 'giữ màu quần áo xanh lâu', 'cách giặt quần áo màu xanh'],
-    image: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=1200&q=80',
+    image: '/images/meobaoquanquanao.webp',
     readTime: '13 phút đọc',
   },
   {
@@ -173,7 +173,7 @@ export const blogPosts = [
     title: '10 Cách khử mùi cho giày và túi xách hiệu quả',
     excerpt: 'Những lỗi thường gặp khi giặt giày và bí quyết làm sạch đúng cách.',
     keywords: ['khử mùi giày', 'khử mùi túi xách', 'vệ sinh giày túi chuyên nghiệp'],
-    image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=80',
+    image: '/images/khumuigiay.jfif',
     readTime: '14 phút đọc',
   },
   {
@@ -181,7 +181,7 @@ export const blogPosts = [
     title: '10 Cách giữ rèm sofa sạch đẹp theo mùa',
     excerpt: 'Lịch vệ sinh, quy trình chăm sóc và phương pháp giặt phù hợp cho nội thất.',
     keywords: ['vệ sinh rèm sofa', 'giữ rèm sofa sạch đẹp', 'giặt rèm sofa theo mùa'],
-    image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80',
+    image: '/images/giu-sach-rem.jpg',
     readTime: '15 phút đọc',
   },
 ];
